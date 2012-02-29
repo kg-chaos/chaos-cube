@@ -19,8 +19,10 @@ int main(){
 //          field[i*9+a] = letters[i];
 //       }
 //    }
-    l();
+//    l();
     r();
+    ausgeben();
+    u();
     ausgeben();
     return 0;
 }
@@ -84,25 +86,18 @@ void ri(){
 void u(){
    help[0] = field[14];
    help[1] = field[26];
-   help[2] = field[38];
-   field[38] = field[14];
-   field[26] = field[13];
    field[14] = field[12];
-   help2[0] = field[12];
-   help2[1] = field[24];
-   help2[2] = field[36];
-   field[47] = help[0];
-   field[50] = help[1];
-   field[53] = help[2];
-   help[0] = field[18];
-   help[1] = field[30];
-   help[2] = field[42];
-   field[18] = help2[0];
-   field[30] = help2[1];
-   field[42] = help2[2];
-   field[2] = help[0];
-   field[5] = help[1];
-   field[8] = help[2];
+   field[26] = field[13];
+   help2[0] = field[38];
+   help2[1] = field[37];
+   field[38] = help[0];
+   field[37] = help[1];
+   help[0] = field[36];
+   help[1] = field[24];
+   field[36] = help2[0];
+   field[24] = help2[1];
+   field[12] = help[0];
+   field[13] = help[1];
 }
 
 void ui(){
