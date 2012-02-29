@@ -20,8 +20,8 @@ int main(){
 //       }
 //    }
 //    l();
-    r();
-    ausgeben();
+//    r();
+//    ausgeben();
     u();
     ausgeben();
     return 0;
@@ -98,6 +98,28 @@ void u(){
    field[24] = help2[1];
    field[12] = help[0];
    field[13] = help[1];
+
+   help[0] = field[15];
+   help[1] = field[27];
+   help[2] = field[39];
+   field[15] = field[6];
+   field[27] = field[7];
+   field[39] = field[8];
+   help2[0] = field[47];
+   help2[1] = field[46];
+   help2[2] = field[45];
+   field[47] = help[0];
+   field[46] = help[1];
+   field[45] = help[2];
+   help[0] = field[35];
+   help[1] = field[23];
+   help[2] = field[11];
+   field[35] = help2[0];
+   field[23] = help2[1];
+   field[11] = help2[2];
+   field[6] = help[0];
+   field[7] = help[1];
+   field[8] = help[2];
 }
 
 void ui(){
