@@ -3,6 +3,9 @@
 char field[54];
 char letters[6] = {'B','O','W','R','Y','G'};
 void ausgeben();
+void l();
+char help[3];
+char help2[3];
 
 int main(){
     int i;
@@ -13,11 +16,34 @@ int main(){
           field[i*9+a] = letters[i];
        }
     }
+    l();
     ausgeben();
     return 0;
 }
 
 void l(){
+   help[0] = field[13];
+   help[1] = field[24];
+   help[2] = field[35];
+   field[13] = field[0];
+   field[24] = field[3];
+   field[35] = field[6];
+   help2[0] = field[45];
+   help2[1] = field[48];
+   help2[2] = field[51];
+   field[45] = help[0];
+   field[48] = help[1];
+   field[51] = help[2];
+   help[0] = field[21];
+   help[1] = field[32];
+   help[2] = field[43];
+   field[21] = help[0];
+   field[32] = help[1];
+   field[43] = help[2];
+
+   field[0] = help[0];
+   field[3] = help[1];
+   field[6] = help[2];
 
 }
 
