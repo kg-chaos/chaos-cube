@@ -23,7 +23,7 @@ int main(){
 //    r();
 //    ausgeben();
     u();
-    l();
+    ri();
     ausgeben();
     return 0;
 }
@@ -72,7 +72,7 @@ void l(){
 }
 
 void li(){
-    help[0] = field[0];
+   help[0] = field[0];
    help[1] = field[3];
    help[2] = field[6];
    field[0] = field[12];
@@ -117,6 +117,50 @@ void r(){
    help[0] = field[14];
    help[1] = field[26];
    help[2] = field[38];
+   help2[0] = field[2];
+   help2[1] = field[5];
+   help2[2] = field[8];
+   field[2] = help[0];
+   field[5] = help[1];
+   field[8] = help[2];
+   help[0] = field[42];
+   help[1] = field[30];
+   help[2] = field[18];
+   field[42] = help2[0];
+   field[30] = help2[1];
+   field[18] = help2[2];
+   help2[0] = field[47];
+   help2[1] = field[50];
+   help2[2] = field[53];
+   field[47] = help[0];
+   field[50] = help[1];
+   field[53] = help[2];
+   field[14] = help2[0];
+   field[26] = help2[1];
+   field[38] = help2[2];
+
+   help[0] = field[15];
+   help[1] = field[16];
+   help2[0] = field[17];
+   help2[1] = field[29];
+   field[17] = help[0];
+   field[29] = help[1];
+   help[0] = field[41];
+   help[1] = field[40];
+   field[41] = help2[0];
+   field[40] = help2[1];
+   help2[0] = field[39];
+   help2[1] = field[27];
+   field[39] = help[0];
+   field[27] = help[1];
+   field[16] = help2[0];
+   field[15] = help2[1];
+}
+
+void ri(){
+    help[0] = field[14];
+   help[1] = field[26];
+   help[2] = field[38];
    field[14] = field[0];
    field[26] = field[3];
    field[38] = field[6];
@@ -129,21 +173,31 @@ void r(){
    help[0] = field[18];
    help[1] = field[30];
    help[2] = field[42];
-   field[18] = help2[0];
+   field[42] = help2[0];
    field[30] = help2[1];
-   field[42] = help2[2];
+   field[18] = help2[2];
    field[2] = help[0];
    field[5] = help[1];
    field[8] = help[2];
 
-   help[0] = field[15];
-   help[1] = field[16];
-   help2[0] = field[17];
-   help[0] = field[15];
+   help[0] = field[17];
+   help[1] = field[29];
+   help2[0] = field[15];
+   help2[1] = field[16];
+   field[15] = help[0];
+   field[16] = help[1];
+   help[0] = field[39];
+   help[1] = field[27];
+   field[39] = help2[0];
+   field[27] = help2[1];
+   help2[0] = field[41];
+   help2[1] = field[40];
+   field[41] = help[0];
+   field[40] = help[1];
+   field[17] = help2[0];
+   field[29] = help2[1];
 
-}
 
-void ri(){
 
 }
 
