@@ -23,7 +23,7 @@ int main(){
 //    r();
 //    ausgeben();
     u();
-    li();
+    l();
     ausgeben();
     return 0;
 }
@@ -44,9 +44,9 @@ void l(){
    help[0] = field[20];
    help[1] = field[32];
    help[2] = field[44];
-   field[20] = help2[0];
+   field[44] = help2[0];
    field[32] = help2[1];
-   field[44] = help2[2];
+   field[20] = help2[2];
    field[0] = help[0];
    field[3] = help[1];
    field[6] = help[2];
@@ -81,9 +81,9 @@ void li(){
    help2[0] = field[20];
    help2[1] = field[32];
    help2[2] = field[44];
-   field[20] = help[0];
+   field[44] = help[0];
    field[32] = help[1];
-   field[44] = help[2];
+   field[20] = help[2];
    help[0] = field[45];
    help[1] = field[48];
    help[2] = field[51];
@@ -101,15 +101,15 @@ void li(){
    field[9] = help[0];
    field[10] = help[1];
    help[0] = field[21];
-   help[0] = field[33];
-   field[21] = help2[0];
-   field[33] = help2[1];
+   help[1] = field[33];
+   field[33] = help2[0];
+   field[21] = help2[1];
    help2[0] = field[34];
    help2[1] = field[35];
    field[34] = help[0];
    field[35] = help[1];
-   field[9] = help2[0];
-   field[10] = help2[0];
+   field[23] = help2[0];
+   field[11] = help2[1];
 
 }
 
@@ -135,6 +135,12 @@ void r(){
    field[2] = help[0];
    field[5] = help[1];
    field[8] = help[2];
+
+   help[0] = field[15];
+   help[1] = field[16];
+   help2[0] = field[17];
+   help[0] = field[15];
+
 }
 
 void ri(){
