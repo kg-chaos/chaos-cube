@@ -22,8 +22,8 @@ int main(){
 //    l();
 //    r();
 //    ausgeben();
-    u();
-    ri();
+    r();
+    ui();
     ausgeben();
     return 0;
 }
@@ -241,7 +241,47 @@ void u(){
 }
 
 void ui(){
+    help[0] = field[6];
+    help[1] = field[7];
+    help[2] = field[8];
+    help2[0] = field[35];
+    help2[1] = field[23];
+    help2[2] = field[11];
+    field[35] = help[0];
+    field[23] = help[1];
+    field[11] = help[2];
+    help[0] = field[47];
+    help[1] = field[46];
+    help[2] = field[45];
+    field[47] = help2[0];
+    field[46] = help2[1];
+    field[45] = help2[2];
+    help2[0] = field[15];
+    help2[1] = field[27];
+    help2[2] = field[39];
+    field[15] = help[0];
+    field[27] = help[1];
+    field[39] = help[2];
+    field[6] = help2[0];
+    field[7] = help2[1];
+    field[8] = help2[2];
 
+    help[0] = field[12];
+    help[1] = field[13];
+    help2[0] = field[36];
+    help2[1] = field[24];
+    field[36] = help[0];
+    field[24] = help[1];
+    help[0] = field[38];
+    help[1] = field[37];
+    field[38] = help2[0];
+    field[37] = help2[1];
+    help2[0] = field[14];
+    help2[1] = field[26];
+    field[14] = help[0];
+    field[26] = help[1];
+    field[12] = help2[0];
+    field[13] = help2[1];
 }
 
 void d(){
