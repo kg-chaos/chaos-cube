@@ -285,6 +285,47 @@ void ui(){
 }
 
 void d(){
+    help[0] = field[0];
+    help[1] = field[1];
+    help[2] = field[2];
+    help2[0] = field[17];
+    help2[1] = field[29];
+    help2[2] = field[41];
+    field[17] = help[0];
+    field[29] = help[1];
+    field[41] = help[2];
+    help[0] = field[53];
+    help[1] = field[52];
+    help[2] = field[51];
+    field[53] = help2[0];
+    field[52] = help2[1];
+    field[51] = help2[2];
+    help2[0] = field[33];
+    help2[1] = field[21];
+    help2[2] = field[9];
+    field[33] = help[0];
+    field[21] = help[1];
+    field[9] = help[2];
+    field[0] = help2[0];
+    field[1] = help2[1];
+    field[2] = help2[2];
+
+    help[0] = field[18];
+    help[1] = field[19];
+    help2[0] = field[20];
+    help2[1] = field[32];
+    field[20] = help[0];
+    field[32] = help[1];
+    help[0] = field[44];
+    help[1] = field[43];
+    field[44] = help2[0];
+    field[43] = help2[1];
+    help2[0] = field[42];
+    help2[1] = field[30];
+    field[42] = help[0];
+    field[30] = help[1];
+    field[18] = help2[0];
+    field[19] = help2[1];
 
 }
 
