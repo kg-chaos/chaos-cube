@@ -330,6 +330,47 @@ void d(){
 }
 
 void di(){
+    help[0] = field[2];
+    help[1] = field[1];
+    help[2] = field[0];
+    help2[0] = field[9];
+    help2[1] = field[21];
+    help2[2] = field[33];
+    field[9] = help[0];
+    field[21] = help[1];
+    field[33] = help[2];
+    help[0] = field[51];
+    help[1] = field[52];
+    help[2] = field[53];
+    field[51] = help2[0];
+    field[52] = help2[1];
+    field[53] = help2[2];
+    help2[0] = field[41];
+    help2[1] = field[29];
+    help2[2] = field[17];
+    field[41] = help[0];
+    field[29] = help[1];
+    field[17] = help[2];
+    field[2] = help2[0];
+    field[1] = help2[1];
+    field[0] = help2[2];
+
+    help[0] = field[20];
+    help[1] = field[19];
+    help2[0] = field[18];
+    help2[1] = field[30];
+    field[18] = help[0];
+    field[30] = help[1];
+    help[0] = field[42];
+    help[1] = field[43];
+    field[42] = help2[0];
+    field[43] = help2[1];
+    help2[0] = field[44];
+    help2[1] = field[32];
+    field[44] = help[0];
+    field[32] = help[1];
+    field[20] = help2[0];
+    field[19] = help2[1];
 
 }
 
