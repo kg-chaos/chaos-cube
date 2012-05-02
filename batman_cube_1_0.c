@@ -6,7 +6,7 @@ char field[54] = {'B','B','B','B','B','B','B','B','B','O','O','O','W','W',
 //char letters[6] = {'B','O','W','R','Y','G'};
 void ausgeben();
 void l(); void li(); void r(); void ri(); void u(); void ui(); void b(); void bi(); void d(); void di();
-void f(); void fi(); void m(); void mi(); void s(); void si(); void e(); void ei();
+void f(); void fi();
 char help[3];
 char help2[3];
 
@@ -463,36 +463,95 @@ void fi(){
 }
 
 void b(){
+    help[0] = field[18];
+    help[1] = field[19];
+    help[2] = field[20];
+    help2[0] = field[15];
+    help2[1] = field[16];
+    help2[2] = field[17];
+    field[15] = help[0];
+    field[16] = help[1];
+    field[17] = help[2];
+    help[0] = field[12];
+    help[1] = field[13];
+    help[2] = field[14];
+    field[12] = help2[0];
+    field[13] = help2[1];
+    field[14] = help2[2];
+    help2[0] = field[9];
+    help2[1] = field[10];
+    help2[2] = field[11];
+    field[9] = help[0];
+    field[10] = help[1];
+    field[11] = help[2];
+    field[18] = help2[0];
+    field[19] = help2[1];
+    field[20] = help2[2];
+
+    help[0] = field[0];
+    help[1] = field[1];
+    help2[0] = field[2];
+    help2[1] = field[5];
+    field[2] = help[0];
+    field[5] = help[1];
+    help[0] = field[8];
+    help[1] = field[7];
+    field[8] = help2[0];
+    field[7] = help2[1];
+    help2[0] = field[6];
+    help2[1] = field[3];
+    field[6] = help[0];
+    field[3] = help[1];
+    field[0] = help2[0];
+    field[1] = help2[1];
 
 }
 
 void bi(){
+    help[0] = field[9];
+    help[1] = field[10];
+    help[2] = field[11];
+    help2[0] = field[12];
+    help2[1] = field[13];
+    help2[2] = field[14];
+    field[12] = help[0];
+    field[13] = help[1];
+    field[14] = help[2];
+    help[0] = field[15];
+    help[1] = field[16];
+    help[2] = field[17];
+    field[15] = help2[0];
+    field[16] = help2[1];
+    field[17] = help2[2];
+    help2[0] = field[18];
+    help2[1] = field[19];
+    help2[2] = field[20];
+    field[18] = help[0];
+    field[19] = help[1];
+    field[20] = help[2];
+    field[9] = help2[0];
+    field[10] = help2[1];
+    field[11] = help2[2];
+
+    help[0] = field[2];
+    help[1] = field[1];
+    help2[0] = field[0];
+    help2[1] = field[3];
+    field[0] = help[0];
+    field[1] = help[1];
+    help[0] = field[6];
+    help[1] = field[7];
+    field[6] = help2[0];
+    field[7] = help2[1];
+    help2[0] = field[8];
+    help2[1] = field[5];
+    field[8] = help[0];
+    field[5] = help[1];
+    field[2] = help2[0];
+    field[1] = help2[1];
 
 }
 
-void m(){
-
-}
-
-void mi(){
-
-}
-
-void s(){
-
-}
-
-void si(){
-
-}
-
-void e(){
-
-}
-
-void ei(){
-
-}
 
 void ausgeben(){
     int b;
