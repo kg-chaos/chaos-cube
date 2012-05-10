@@ -1,11 +1,13 @@
 #include <stdio.h>
 
+typedef void (*funcsP) ();
+
 char field[54] = {'B','B','B','B','B','B','B','B','B','O','O','O','W','W',
 'W','R','R','R','Y','Y','Y','O','O','O','W','W','W','R','R','R','Y','Y','Y','O',
 'O','O','W','W','W','R','R','R','Y','Y','Y','G','G','G','G','G','G','G','G','G'};
 //char letters[6] = {'B','O','W','R','Y','G'};
 void ausgeben();
-void l(); void li(); void r(); void ri(); void u(); void ui(); void b(); void bi(); void d(); void di();
+void l();void li(); void r(); void ri(); void u(); void ui(); void b(); void bi(); void d(); void di();
 void f(); void fi();
 char help[3];
 char help2[3];
@@ -13,17 +15,8 @@ char help2[3];
 int main(){
     int i;
     int a;
-    //int b;
-//    for(i = 0;i < 6; i++){
-//       for(a = 0; a < 9; a++){
-//          field[i*9+a] = letters[i];
-//       }
-//    }
-//    l();
-//    r();
-//    ausgeben();
-    r();
-    fi();
+    funcsP funcArr[] = {l, li, r, ri, u, ui, b, bi, d, di, f,fi};
+   funcArr[2]();
     ausgeben();
     return 0;
 }
