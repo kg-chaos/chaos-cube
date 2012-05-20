@@ -1,4 +1,4 @@
-#include <stdio.h>
+extern void kprintf(char* str);
 
 typedef void (*funcsP) ();
 
@@ -12,13 +12,50 @@ void f(); void fi();
 char help[3];
 char help2[3];
 
-int main(){
-    int i;
-    int a;
-    funcsP funcArr[] = {l, li, r, ri, u, ui, b, bi, d, di, f,fi};
-   funcArr[2]();
+int start(){
+//    int i;
+//    int a;
+//    funcsP funcArr[] = {l, li, r, ri, u, ui, b, bi, d, di, f,fi};
+//   funcArr[2]();
+   // ausgeben();
+   char fua[] = "el fua! /n";
+    kprintf(fua);
     ausgeben();
     return 0;
+}
+
+
+void ausgeben(){
+    int b;
+    //char* ueber;
+    char ueber[3];
+//    for(b = 1; b < 55; b++){
+//      printf("%c",field[b-1]);
+//      if(b %3 == 0 && b != 0){
+//        printf("\n");
+//      }
+//    }
+        kprintf("   ");
+       // ueber[0] = help[0];ueber[1] = help[1]; ueber[2]=help[2];
+       // kprintf(field);
+       ueber[0] = field[0];
+        kprintf(ueber[0]);
+        kprintf("   ");
+//        kprintf("%c%c%c /n",field[3],field[4],field[5]);
+//        kprintf("   ");
+//        kprintf("%c%c%c /n",field[6],field[7],field[8]);
+//        for(b = 9; b < 45; b++){
+//            kprintf(field[b]);
+//               if((b-8)%12== 0&&b!=9){
+//                   kprintf("/n");
+//               }
+//        }
+//        kprintf("   ");
+//        kprintf("%c%c%c /n",field[45],field[46],field[47]);
+//        kprintf("   ");
+//        kprintf("%c%c%c /n",field[48],field[49],field[50]);
+//        kprintf("   ");
+//        kprintf("%c%c%c /n",field[51],field[52],field[53]);
 }
 
 void l(){
@@ -546,30 +583,3 @@ void bi(){
 }
 
 
-void ausgeben(){
-    int b;
-//    for(b = 1; b < 55; b++){
-//      printf("%c",field[b-1]);
-//      if(b %3 == 0 && b != 0){
-//        printf("\n");
-//      }
-//    }
-        printf("   ");
-        printf("%c%c%c \n",field[0],field[1],field[2]);
-        printf("   ");
-        printf("%c%c%c \n",field[3],field[4],field[5]);
-        printf("   ");
-        printf("%c%c%c \n",field[6],field[7],field[8]);
-        for(b = 9; b < 45; b++){
-            printf("%c",field[b]);
-               if((b-8)%12== 0&&b!=9){
-                   printf("\n");
-               }
-        }
-        printf("   ");
-        printf("%c%c%c \n",field[45],field[46],field[47]);
-        printf("   ");
-        printf("%c%c%c \n",field[48],field[49],field[50]);
-        printf("   ");
-        printf("%c%c%c \n",field[51],field[52],field[53]);
-}
