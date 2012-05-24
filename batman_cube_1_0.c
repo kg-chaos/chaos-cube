@@ -9,6 +9,9 @@ typedef void (*funcsP) ();
 char field[54] = {'B','B','B','B','B','B','B','B','B','O','O','O','W','W',
 'W','R','R','R','Y','Y','Y','O','O','O','W','W','W','R','R','R','Y','Y','Y','O',
 'O','O','W','W','W','R','R','R','Y','Y','Y','G','G','G','G','G','G','G','G','G'};
+char hfield[54] = {'B','B','B','B','B','B','B','B','B','O','O','O','W','W',
+'W','R','R','R','Y','Y','Y','O','O','O','W','W','W','R','R','R','Y','Y','Y','O',
+'O','O','W','W','W','R','R','R','Y','Y','Y','G','G','G','G','G','G','G','G','G'};
 //char letters[6] = {'B','O','W','R','Y','G'};
 void ausgeben();
 void l();void li(); void r(); void ri(); void u(); void ui(); void b(); void bi(); void d(); void di();
@@ -585,4 +588,16 @@ void bi(){
 
 }
 
+bool solved()  {
+    int a = 0;
+    for(int i = 0; i < 53; i++) {
+       if(hfield[i] == field[i])
+           a++;
+    }
+    if(a < 54) return false;
+    else return true;
+}
 
+
+void drehen() {
+}
