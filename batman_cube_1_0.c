@@ -588,16 +588,23 @@ void bi(){
 
 }
 
-bool solved()  {
+int solved()  {     //boolean durch ints ausdrücken
     int a = 0;
-    for(int i = 0; i < 53; i++) {
+    int i;
+    for(i = 0; i < 53; i++) {
        if(hfield[i] == field[i])
            a++;
     }
-    if(a < 54) return false;
-    else return true;
+    if(a < 54) return 0;    //laut konvention: 0 = false alles andere = true
+    else return 1;
 }
 
 
 void drehen() {
+   int i;
+   dreh:
+   //do crazy shit
+    for(i = 0; i < 53; i++)
+       if(hfield[i] == field[i])
+         goto dreh;
 }
