@@ -19,7 +19,7 @@ void f(); void fi();
 char help[3];
 char help2[3];
 
-int start(){
+void start(){
 //    int i;
 //    int a;
     char toDo;
@@ -28,24 +28,23 @@ int start(){
     funcsP funcArr[] = {l, li, r, ri, u, ui, b, bi, d, di, f,fi};
     funcArr[2]();
     ausgeben();
-    return 0;
 }
 
-char getChar(){
-    asm volatile("mov $0,%ah");
-    asm volatile("int $0x16");   //Der Interrupt 16h ist der Tastaturinterrupt
-    asm("ret");         //Die Funktion 0h liest ein Zeichen ein und gibt den ASCII Code in AL zurück
-}
+//char getChar(){
+//    char c;
+//    asm volatile("mov $0,%ah");
+//    c = asm("int $0x16");   //Der Interrupt 16h ist der Tastaturinterrupt
+//    //asm("ret");         //Die Funktion 0h liest ein Zeichen ein und gibt den ASCII Code in AL zurück
+//    return c;
+//}
 
 void ausgeben(){
         int b;
         kprintf("   ");
         cprintf(field[0],field[1],field[2]);
-        kprintf("/n");
-        kprintf("   ");
+        kprintf("/n    ");
         cprintf(field[3],field[4],field[5]);
-        kprintf("/n");
-        kprintf("   ");
+        kprintf("/n    ");
         cprintf(field[6],field[7],field[8]);
         kprintf("/n");
         for(b = 9; b < 45; b++){
@@ -56,11 +55,9 @@ void ausgeben(){
         }
         kprintf("   ");
         cprintf(field[45],field[46],field[47]);
-        kprintf("/n");
-        kprintf("   ");
+        kprintf("/n    ");
         cprintf(field[48],field[49],field[50]);
-        kprintf("/n");
-        kprintf("   ");
+        kprintf("/n    ");
         cprintf(field[51],field[52],field[53]);
 }
 

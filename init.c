@@ -6,15 +6,15 @@ void lprintf(char p);
 void clear();
 char* video = (char*) 0xb8000;
 int pPosition = 0;
-extern int start();
+extern void start();
 void init(void)
 {
     char hw[] = "Batman started! /n";
     clear();
     kprintf(hw);
-    //start();
-    shutdown();
-    kprintf("shutdown fehlgeschlagen");
+    start();
+    //shutdown();
+   // kprintf("shutdown fehlgeschlagen");
 }
 
 void kprintf(char str[]){
