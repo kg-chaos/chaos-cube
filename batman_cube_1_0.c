@@ -1,11 +1,5 @@
-
 #include <time.h>
 #include <stdlib.h>
-
-char getChar();
-extern void kprintf(char str[]);
-extern void cprintf(char a, char b, char c);
-extern void lprintf(char p);
 #include <stdio.h>
 
 
@@ -17,18 +11,19 @@ char field[54] = {'B','B','B','B','B','B','B','B','B','O','O','O','W','W',
 const char hfield[54] = {'B','B','B','B','B','B','B','B','B','O','O','O','W','W',
 'W','R','R','R','Y','Y','Y','O','O','O','W','W','W','R','R','R','Y','Y','Y','O',
 'O','O','W','W','W','R','R','R','Y','Y','Y','G','G','G','G','G','G','G','G','G'};
-//char letters[6] = {'B','O','W','R','Y','G'};
 void ausgeben();
 void l();void li(); void r(); void ri(); void u(); void ui(); void b(); void bi(); void d(); void di();
 void f(); void fi();
 char help[3];
 char help2[3];
+void drehen();
 
 int main(){
     printf("hello!");
     //char toDo;
 //    while(!toDo)
     //toDo = getChar();
+   // drehen();
     ausgeben();
     return 0;
 }
@@ -43,7 +38,7 @@ int main(){
 
 void ausgeben(){
         int b;
-        printf("\n    %c%c%c\n",field[0],field[1],field[2]);
+        printf("\n   %c%c%c\n",field[0],field[1],field[2]);
         printf("   %c%c%c\n ",field[3],field[4],field[5]);
         printf("   %c%c%c\n ",field[6],field[7],field[8]);
         for(b = 9; b < 45; b++){
@@ -56,6 +51,36 @@ void ausgeben(){
         printf("   %c%c%c\n ",field[48],field[49],field[50]);
         printf("   %c%c%c\n ",field[51],field[52],field[53]);
 }
+
+
+int solved()  {     //boolean durch ints ausdrücken
+    int a = 0;
+    int i;
+    for(i = 0; i < 53; i++) {
+       if(hfield[i] == field[i])
+           a++;
+    }
+    if(a < 54) return 0;    //laut konvention: 0 = false alles andere = true
+    else return 1;
+}
+
+
+void drehen() {
+   int i;
+   time_t t;
+   int z;
+   funcsP funcArr[] = {l, li, r, ri, u, ui, b, bi, d, di, f,fi};
+   dreh:
+   time(&t);
+   srand((unsigned int)t);              // Zufallsgenerator initialisieren
+    z = rand() % 17;
+   funcArr[z]();
+
+    for(i = 0; i < 53; i++)
+       if(hfield[i] != field[i]);
+         goto dreh;
+}
+
 
 void l(){
    help[0] = field[12];
@@ -579,32 +604,4 @@ void bi(){
     field[2] = help2[0];
     field[1] = help2[1];
 
-}
-
-int solved()  {     //boolean durch ints ausdrücken
-    int a = 0;
-    int i;
-    for(i = 0; i < 53; i++) {
-       if(hfield[i] == field[i])
-           a++;
-    }
-    if(a < 54) return 0;    //laut konvention: 0 = false alles andere = true
-    else return 1;
-}
-
-
-void drehen() {
-   int i;
-   funcsP funcArr[] = {l, li, r, ri, u, ui, b, bi, d, di, f,fi};
-   dreh:
-
-   time_t t;
-   time(&t);
-   srand((unsigned int)t);              // Zufallsgenerator initialisieren
-   int z = rand() % 17;
-   funcArr[z]();
-
-    for(i = 0; i < 53; i++)
-       if(hfield[i] != field[i])
-         goto dreh;
 }
