@@ -1,3 +1,4 @@
+
 #include <time.h>
 #include <stdlib.h>
 
@@ -5,6 +6,7 @@ char getChar();
 extern void kprintf(char str[]);
 extern void cprintf(char a, char b, char c);
 extern void lprintf(char p);
+#include <stdio.h>
 
 
 typedef void (*funcsP) ();
@@ -12,7 +14,7 @@ typedef void (*funcsP) ();
 char field[54] = {'B','B','B','B','B','B','B','B','B','O','O','O','W','W',
 'W','R','R','R','Y','Y','Y','O','O','O','W','W','W','R','R','R','Y','Y','Y','O',
 'O','O','W','W','W','R','R','R','Y','Y','Y','G','G','G','G','G','G','G','G','G'};
-char hfield[54] = {'B','B','B','B','B','B','B','B','B','O','O','O','W','W',
+const char hfield[54] = {'B','B','B','B','B','B','B','B','B','O','O','O','W','W',
 'W','R','R','R','Y','Y','Y','O','O','O','W','W','W','R','R','R','Y','Y','Y','O',
 'O','O','W','W','W','R','R','R','Y','Y','Y','G','G','G','G','G','G','G','G','G'};
 //char letters[6] = {'B','O','W','R','Y','G'};
@@ -22,47 +24,37 @@ void f(); void fi();
 char help[3];
 char help2[3];
 
-int start(){
-//    int i;
-//    int a;
-    char toDo;
+int main(){
+    printf("hello!");
+    //char toDo;
 //    while(!toDo)
     //toDo = getChar();
     ausgeben();
     return 0;
 }
 
-char getChar(){
-    asm volatile("mov $0,%ah");
-    asm volatile("int $0x16");   //Der Interrupt 16h ist der Tastaturinterrupt
-    asm("ret");         //Die Funktion 0h liest ein Zeichen ein und gibt den ASCII Code in AL zurück
-}
+//char getChar(){
+//    char c;
+//    asm volatile("mov $0,%ah");
+//    c = asm("int $0x16");   //Der Interrupt 16h ist der Tastaturinterrupt
+//    //asm("ret");         //Die Funktion 0h liest ein Zeichen ein und gibt den ASCII Code in AL zurück
+//    return c;
+//}
 
 void ausgeben(){
         int b;
-        kprintf("   ");
-        cprintf(field[0],field[1],field[2]);
-        kprintf("/n");
-        kprintf("   ");
-        cprintf(field[3],field[4],field[5]);
-        kprintf("/n");
-        kprintf("   ");
-        cprintf(field[6],field[7],field[8]);
-        kprintf("/n");
+        printf("\n    %c%c%c\n",field[0],field[1],field[2]);
+        printf("   %c%c%c\n ",field[3],field[4],field[5]);
+        printf("   %c%c%c\n ",field[6],field[7],field[8]);
         for(b = 9; b < 45; b++){
-            lprintf(field[b]);
+            printf("%c",field[b]);
                if((b-8)%12== 0&&b!=9){
-                   kprintf("/n");
+                   printf("\n");
                }
         }
-        kprintf("   ");
-        cprintf(field[45],field[46],field[47]);
-        kprintf("/n");
-        kprintf("   ");
-        cprintf(field[48],field[49],field[50]);
-        kprintf("/n");
-        kprintf("   ");
-        cprintf(field[51],field[52],field[53]);
+        printf("   %c%c%c\n ",field[45],field[46],field[47]);
+        printf("   %c%c%c\n ",field[48],field[49],field[50]);
+        printf("   %c%c%c\n ",field[51],field[52],field[53]);
 }
 
 void l(){
