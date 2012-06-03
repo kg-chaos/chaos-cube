@@ -5,10 +5,10 @@ CC = gcc
 LD = ld
 
 ASFLAGS = -m32
-CFLAGS = -m32 -Wall -g -fno-stack-protector -nostdinc
+CFLAGS = -m32 -Wall -g -fno-stack-protector -nostdinc -Wall -Wextra -Werror -nostdlib -fno-builtin -nostartfiles -nodefaultlibs
 LDFLAGS = -melf_i386 -Tkernel.ld
 
-os: $(OBJS)
+os.bin: $(OBJS)
 	$(LD) $(LDFLAGS) -o $@ $^
 
 %.o: %.c

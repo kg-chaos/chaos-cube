@@ -1,7 +1,4 @@
-char getChar();
-extern void kprintf(char str[]);
-extern void cprintf(char a, char b, char c);
-extern void lprintf(char p);
+#include <stdio.h>
 
 
 typedef void (*funcsP) ();
@@ -22,7 +19,7 @@ char help2[3];
 void start(){
 //    int i;
 //    int a;
-    char toDo;
+    //char toDo;
 //    while(!toDo)
     //toDo = getChar();
     funcsP funcArr[] = {l, li, r, ri, u, ui, b, bi, d, di, f,fi};
@@ -40,25 +37,18 @@ void start(){
 
 void ausgeben(){
         int b;
-        kprintf("   ");
-        cprintf(field[0],field[1],field[2]);
-        kprintf("/n    ");
-        cprintf(field[3],field[4],field[5]);
-        kprintf("/n    ");
-        cprintf(field[6],field[7],field[8]);
-        kprintf("/n");
+        printf("\n    %c%c%c\n",field[0],field[1],field[2]);
+        printf("   %c%c%c\n ",field[3],field[4],field[5]);
+        printf("   %c%c%c\n ",field[6],field[7],field[8]);
         for(b = 9; b < 45; b++){
-            lprintf(field[b]);
+            printf("%c",field[b]);
                if((b-8)%12== 0&&b!=9){
-                   kprintf("/n");
+                   printf("\n");
                }
         }
-        kprintf("   ");
-        cprintf(field[45],field[46],field[47]);
-        kprintf("/n    ");
-        cprintf(field[48],field[49],field[50]);
-        kprintf("/n    ");
-        cprintf(field[51],field[52],field[53]);
+        printf("   %c%c%c\n ",field[45],field[46],field[47]);
+        printf("   %c%c%c\n ",field[48],field[49],field[50]);
+        printf("   %c%c%c\n ",field[51],field[52],field[53]);
 }
 
 void l(){
