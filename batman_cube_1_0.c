@@ -6,7 +6,7 @@ typedef void (*funcsP) ();
 char field[54] = {'B','B','B','B','B','B','B','B','B','O','O','O','W','W',
 'W','R','R','R','Y','Y','Y','O','O','O','W','W','W','R','R','R','Y','Y','Y','O',
 'O','O','W','W','W','R','R','R','Y','Y','Y','G','G','G','G','G','G','G','G','G'};
-char hfield[54] = {'B','B','B','B','B','B','B','B','B','O','O','O','W','W',
+const char hfield[54] = {'B','B','B','B','B','B','B','B','B','O','O','O','W','W',
 'W','R','R','R','Y','Y','Y','O','O','O','W','W','W','R','R','R','Y','Y','Y','O',
 'O','O','W','W','W','R','R','R','Y','Y','Y','G','G','G','G','G','G','G','G','G'};
 //char letters[6] = {'B','O','W','R','Y','G'};
@@ -16,9 +16,8 @@ void f(); void fi();
 char help[3];
 char help2[3];
 
-void start(){
-//    int i;
-//    int a;
+void main(){
+    printf("hello!");
     //char toDo;
 //    while(!toDo)
     //toDo = getChar();
