@@ -23,29 +23,12 @@ void lesen();
 void schreiben();
 
 void secure();
-<<<<<<< HEAD
 void geloest();
-=======
 
->>>>>>> 5e95febc6c81dee021f5ee272579f65a11dfba6c
 int main(){
     begruessen();
     lesen();
-<<<<<<< HEAD
     shell();
-=======
-//    shell();
-   // shell();
-   // bi();
-  // drehen();
- // for(i=0;i<1001;i++)
-  ausgeben();
-   drehen();
-//   l();r();
-//    for(i = 0; i <10001;i++)
-//    bi();
->>>>>>> 5e95febc6c81dee021f5ee272579f65a11dfba6c
-    ausgeben();
     return 0;
 }
 
@@ -55,10 +38,10 @@ void drehen() {
    time_t t;
    int z;
    funcsP funcArr[] = {l, li, r, ri, u, ui, b, bi, d, di, f,fi};
-   time(&t);
+   time(&t); // Zufallsgenerator initialisieren
    srand((unsigned int)t);
    dreh:
-                // Zufallsgenerator initialisieren
+
     z = rand() % 12;
    funcArr[z]();
    // printf("%i ", z);
@@ -66,7 +49,6 @@ void drehen() {
     for(i = 0; i < 53; i++)
        if(hfield[i] != field[i]);
          goto dreh;
-    //schreiben();
     geloest();
 }
 
@@ -75,6 +57,7 @@ void lesen(){
    int foo;
    FILE *FDatei;
    FDatei=fopen("cube.txt", "r"); // Datei öffnen, r = lesen, w = schreiben,.....
+   if(FDatei==NULL) {printf("no document (404");exit(0);}
    foo = fscanf(FDatei, "%54c", field);
    fclose(FDatei); // Datei schliessen
 }
@@ -88,8 +71,6 @@ void schreiben(){
   {
     printf("Fehler beim oeffnen der Datei.");
   }
-  //for(;i<54;i++)
-  //strcpy(bar,field);
   fwrite(&field,sizeof(field),1,datei);
   fclose (datei);
 }
@@ -176,7 +157,7 @@ void begruessen(){
     printf("     | )___) )| )   ( |   | |   | )   ( || )   ( || )  \\  |\n");
     printf("     |/ \\___/ |/     \\|   )_(   |/     \\||/     \\||/    )_)\n");
 
-    printf("\n     Because Algorithm are To MAiNstream!");
+    printf("\n     Because Algorithm are To MAiNstream!\n\n");
 
 
 }
@@ -198,29 +179,29 @@ void ausgeben(){
 }
 
 void secure(){
-int i;
-int y = 0;
-int b = 0;
-int w = 0;
-int o = 0;
-int r = 0;
-int g = 0;
-for(i = 0;i<54;i++){
-switch(field[i]){
-case'W':w++;break;
-case'B':b++;break;
-case'Y':y++;break;
-case'O':o++;break;
-case'R':r++;break;
-case'G':g++;break;
-}
-}
-printf("W: %i\n",w);
-printf("B: %i\n",b);
-printf("Y: %i\n",y);
-printf("O: %i\n",o);
-printf("R: %i\n",r);
-printf("G: %i\n",g);
+    int i;
+    int y = 0;
+    int b = 0;
+    int w = 0;
+    int o = 0;
+    int r = 0;
+    int g = 0;
+    for(i = 0;i<54;i++){
+      switch(field[i]){
+        case'W':w++;break;
+        case'B':b++;break;
+        case'Y':y++;break;
+        case'O':o++;break;
+        case'R':r++;break;
+        case'G':g++;break;
+      }
+    }
+    printf("W: %i\n",w);
+    printf("B: %i\n",b);
+    printf("Y: %i\n",y);
+    printf("O: %i\n",o);
+    printf("R: %i\n",r);
+    printf("G: %i\n",g);
 }
 
 
