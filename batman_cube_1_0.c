@@ -22,12 +22,20 @@ void helpS();
 void lesen();
 void schreiben();
 
+void secure();
+
 int main(){
 //    begruessen();
+   int i;
     lesen();
 //    shell();
-    r();
+   // shell();
+   // bi();
+  // drehen();
+ // for(i=0;i<1001;i++)
+  f();
     ausgeben();
+    secure();
     return 0;
 }
 
@@ -152,24 +160,53 @@ void ausgeben(){
         printf("   %c%c%c\n",field[51],field[52],field[53]);
 }
 
+void secure(){
+int i;
+int y = 0;
+int b = 0;
+int w = 0;
+int o = 0;
+int r = 0;
+int g = 0;
+for(i = 0;i<54;i++){
+switch(field[i]){
+case'W':w++;break;
+case'B':b++;break;
+case'Y':y++;break;
+case'O':o++;break;
+case'R':r++;break;
+case'G':g++;break;
+}
+}
+printf("W: %i\n",w);
+printf("B: %i\n",b);
+printf("Y: %i\n",y);
+printf("O: %i\n",o);
+printf("R: %i\n",r);
+printf("G: %i\n",g);
+}
 
 void drehen() {
    int i;
+   int a;
    time_t t;
    int z;
    funcsP funcArr[] = {l, li, r, ri, u, ui, b, bi, d, di, f,fi};
    dreh:
-  for(i = 0; i <4; i++){
+  for(i = 0; i <100; i++){
    time(&t);
    srand((unsigned int)i);              // Zufallsgenerator initialisieren
     z = rand() % 11;
    funcArr[z]();
-    printf("%i", z);}
+    printf("%i", z);
+    for(a=0;a<100000;a++);
+
+    }
 //    for(i = 0; i < 53; i++)
 //       if(hfield[i] != field[i]);
 //         goto dreh;
-    schreiben();
-    geloest();
+    //schreiben();
+   // geloest();
 }
 
 
@@ -306,9 +343,9 @@ void ri(){
     help[0] = field[14];
    help[1] = field[26];
    help[2] = field[38];
-   field[14] = field[0];
-   field[26] = field[3];
-   field[38] = field[6];
+   field[14] = field[2];
+   field[26] = field[5];
+   field[38] = field[8];
    help2[0] = field[47];
    help2[1] = field[50];
    help2[2] = field[53];
