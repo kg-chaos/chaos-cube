@@ -1,3 +1,6 @@
+#include <time.h>
+#include <stdlib.h>
+
 char getChar();
 extern void kprintf(char str[]);
 extern void cprintf(char a, char b, char c);
@@ -25,8 +28,6 @@ int start(){
     char toDo;
 //    while(!toDo)
     //toDo = getChar();
-    funcsP funcArr[] = {l, li, r, ri, u, ui, b, bi, d, di, f,fi};
-    funcArr[2]();
     ausgeben();
     return 0;
 }
@@ -602,9 +603,16 @@ int solved()  {     //boolean durch ints ausdrücken
 
 void drehen() {
    int i;
+   funcsP funcArr[] = {l, li, r, ri, u, ui, b, bi, d, di, f,fi};
    dreh:
-   //do crazy shit
+
+   time_t t;
+   time(&t);
+   srand((unsigned int)t);              // Zufallsgenerator initialisieren
+   int z = rand() % 17;
+   funcArr[z]();
+
     for(i = 0; i < 53; i++)
-       if(hfield[i] == field[i])
+       if(hfield[i] != field[i])
          goto dreh;
 }
