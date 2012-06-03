@@ -49,13 +49,15 @@ void drehen() {
    time_t t;
    int z;
    funcsP funcArr[] = {l, li, r, ri, u, ui, b, bi, d, di, f,fi};
-   dreh:
-  for(i = 0; i <10001; i++){
    time(&t);
-   srand((unsigned int)i);              // Zufallsgenerator initialisieren
-    z = rand() % 11;
+   srand((unsigned int)t);
+   dreh:
+  //for(i = 0; i <10001; i++){
+                // Zufallsgenerator initialisieren
+   for(i = 0;i<10000;i++){
+    z = rand() % 12;
    funcArr[z]();
-    //printf("%i", z);
+    printf("%i ", z);
 
     }
 //    for(i = 0; i < 53; i++)
@@ -78,7 +80,7 @@ void schreiben(){
   int i = 0;
   FILE *datei;
 
-  datei = fopen ("cube1.txt", "w");
+  datei = fopen ("cube21.txt", "w");
   if (datei == NULL)
   {
     printf("Fehler beim oeffnen der Datei.");
