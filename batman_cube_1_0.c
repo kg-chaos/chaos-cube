@@ -22,18 +22,12 @@ void helpS();
 void lesen();
 void schreiben();
 void secure();
+void geloest();
 int main(){
-//    begruessen();
-   int i;
+    begruessen();
     lesen();
-   // shell();
-   // bi();
-   drehen();
-//   l();r();
-//    for(i = 0; i <10001;i++)
-//    bi();
+    shell();
     ausgeben();
-    secure();
     return 0;
 }
 
@@ -46,19 +40,16 @@ void drehen() {
    time(&t);
    srand((unsigned int)t);
    dreh:
-  //for(i = 0; i <10001; i++){
                 // Zufallsgenerator initialisieren
-   for(i = 0;i<10000;i++){
     z = rand() % 12;
    funcArr[z]();
-    printf("%i ", z);
+   // printf("%i ", z);
 
-    }
-//    for(i = 0; i < 53; i++)
-//       if(hfield[i] != field[i]);
-//         goto dreh;
-    schreiben();
-    //geloest();
+    for(i = 0; i < 53; i++)
+       if(hfield[i] != field[i]);
+         goto dreh;
+    //schreiben();
+    geloest();
 }
 
 
