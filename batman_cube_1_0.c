@@ -34,10 +34,37 @@ int main(){
   // drehen();
  // for(i=0;i<1001;i++)
   f();
+   drehen();
+//   l();r();
+//    for(i = 0; i <10001;i++)
+//    bi();
     ausgeben();
     secure();
     return 0;
 }
+
+
+void drehen() {
+   int i;
+   time_t t;
+   int z;
+   funcsP funcArr[] = {l, li, r, ri, u, ui, b, bi, d, di, f,fi};
+   dreh:
+  for(i = 0; i <10001; i++){
+   time(&t);
+   srand((unsigned int)i);              // Zufallsgenerator initialisieren
+    z = rand() % 11;
+   funcArr[z]();
+    //printf("%i", z);
+
+    }
+//    for(i = 0; i < 53; i++)
+//       if(hfield[i] != field[i]);
+//         goto dreh;
+    schreiben();
+    //geloest();
+}
+
 
 void lesen(){
    int foo;
@@ -100,7 +127,7 @@ printf("| | \\_  )| (      | |      | |   | || (            ) |   | |   (_)(_)\n
 printf("| (___) || (____/\\| (____/\\| (___) || (____/\\/\\____) |   | |    _  _ \n");
 printf("(_______)(_______/(_______/(_______)(_______/\\_______)   )_(   (_)(_)\n");
 
-
+secure();
 ausgeben();
 exit(0);
 
@@ -184,29 +211,6 @@ printf("Y: %i\n",y);
 printf("O: %i\n",o);
 printf("R: %i\n",r);
 printf("G: %i\n",g);
-}
-
-void drehen() {
-   int i;
-   int a;
-   time_t t;
-   int z;
-   funcsP funcArr[] = {l, li, r, ri, u, ui, b, bi, d, di, f,fi};
-   dreh:
-  for(i = 0; i <100; i++){
-   time(&t);
-   srand((unsigned int)i);              // Zufallsgenerator initialisieren
-    z = rand() % 11;
-   funcArr[z]();
-    printf("%i", z);
-    for(a=0;a<100000;a++);
-
-    }
-//    for(i = 0; i < 53; i++)
-//       if(hfield[i] != field[i]);
-//         goto dreh;
-    //schreiben();
-   // geloest();
 }
 
 
@@ -720,7 +724,7 @@ void bi(){
     help2[0] = field[0];
     help2[1] = field[3];
     field[0] = help[0];
-    field[1] = help[1];
+    field[3] = help[1];
     help[0] = field[6];
     help[1] = field[7];
     field[6] = help2[0];
