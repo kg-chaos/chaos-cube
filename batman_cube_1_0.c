@@ -21,11 +21,12 @@ void shell();
 void helpS();
 void lesen();
 void schreiben();
+
 int main(){
 //    begruessen();
     lesen();
 //    shell();
-    l();
+    r();
     ausgeben();
     return 0;
 }
@@ -158,7 +159,7 @@ void drehen() {
    int z;
    funcsP funcArr[] = {l, li, r, ri, u, ui, b, bi, d, di, f,fi};
    dreh:
-  for(i = 0; i <10000; i++){
+  for(i = 0; i <4; i++){
    time(&t);
    srand((unsigned int)i);              // Zufallsgenerator initialisieren
     z = rand() % 11;
