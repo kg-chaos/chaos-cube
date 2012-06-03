@@ -22,9 +22,11 @@ void helpS();
 void lesen();
 void schreiben();
 int main(){
-    begruessen();
+//    begruessen();
     lesen();
-    shell();
+//    shell();
+    l();
+    ausgeben();
     return 0;
 }
 
