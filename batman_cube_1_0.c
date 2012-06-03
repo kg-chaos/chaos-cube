@@ -17,51 +17,95 @@ void f(); void fi();
 char help[3];
 char help2[3];
 void drehen();
-
+void begruessen();
+void shell();
+void helpS();
 int main(){
-    printf("hello!");
-    //char toDo;
-//    while(!toDo)
-    //toDo = getChar();
-   // drehen();
-    ausgeben();
+    begruessen();
+    shell();
     return 0;
 }
 
-//char getChar(){
-//    char c;
-//    asm volatile("mov $0,%ah");
-//    c = asm("int $0x16");   //Der Interrupt 16h ist der Tastaturinterrupt
-//    //asm("ret");         //Die Funktion 0h liest ein Zeichen ein und gibt den ASCII Code in AL zurück
-//    return c;
-//}
+void shell(){
+    char toDO;
+    int foo;
+    printf("type in 'h' for more information\n");
+    while(toDO != 's'){
+      printf("->");
+      toDO = 'f';
+      foo = scanf("%c",&toDO);
+      switch (toDO){
+        case 'g':
+         drehen();
+         break;
+        case 's':
+         break;
+        case 'o':
+         ausgeben();
+         break;
+        case 'h':
+         helpS();
+         break;
+        default:
+          printf("Well Well...  \n");
+          break;
+      }
+    }
+
+}
+
+void helpS(){
+    printf("g for g / start\n");
+    printf("s for stop\n");
+    printf("o for output \n");
+    printf("h for help \n");
+}
+
+void begruessen(){
+    printf("\n\n\n");
+    printf("           _==/           i     i           \\==_\n");
+    printf("          /XX/            |\\___/|            \\XX\\ \n");
+    printf("        /XXXX\\            |XXXXX|            /XXXX\\ \n");
+    printf("       |XXXXXX\\_         _XXXXXXX_         _/XXXXXX|\n");
+    printf("      XXXXXXXXXXXxxxxxxxXXXXXXXXXXXxxxxxxxXXXXXXXXXXX\n");
+    printf("     |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|\n");
+    printf("     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n");
+    printf("     |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|\n");
+    printf("      XXXXXX/^^^^^\\XXXXXXXXXXXXXXXXXXXXX/^^^^^\\XXXXXX\n");
+    printf("       |XXX|       \\XXX/^^\\XXXXX/^^\\XXX/       |XXX|\n");
+    printf("         \\XX\\       \\X/    \\XXX/    \\X/       /XX/\n");
+    printf("            \"\\       \"      \\X/      \"       /\"\n");
+
+    printf("\n\n\n");
+
+    printf("      ______   _______ _________ _______  _______  _   \n");
+    printf("     (  ___ \\ (  ___  )\\__   __/(       )(  ___  )( (    /|\n");
+    printf("     | (   ) )| (   ) |   ) (   | () () || (   ) ||  \\  ( |\n");
+    printf("     | (__/ / | (___) |   | |   | || || || (___) ||   \\ | |\n");
+    printf("     |  __ (  |  ___  |   | |   | |(_)| ||  ___  || (\\ \\) |\n");
+    printf("     | (  \\ \\ | (   ) |   | |   | |   | || (   ) || | \\   |\n");
+    printf("     | )___) )| )   ( |   | |   | )   ( || )   ( || )  \\  |\n");
+    printf("     |/ \\___/ |/     \\|   )_(   |/     \\||/     \\||/    )_)\n");
+
+    printf("\n     Because Algorithm are To MAiNstream!");
+
+
+}
 
 void ausgeben(){
         int b;
         printf("\n   %c%c%c\n",field[0],field[1],field[2]);
-        printf("   %c%c%c\n ",field[3],field[4],field[5]);
-        printf("   %c%c%c\n ",field[6],field[7],field[8]);
+        printf("   %c%c%c\n",field[3],field[4],field[5]);
+        printf("   %c%c%c\n",field[6],field[7],field[8]);
         for(b = 9; b < 45; b++){
             printf("%c",field[b]);
                if((b-8)%12== 0&&b!=9){
                    printf("\n");
                }
         }
-        printf("   %c%c%c\n ",field[45],field[46],field[47]);
-        printf("   %c%c%c\n ",field[48],field[49],field[50]);
-        printf("   %c%c%c\n ",field[51],field[52],field[53]);
-}
-
-
-int solved()  {     //boolean durch ints ausdrücken
-    int a = 0;
-    int i;
-    for(i = 0; i < 53; i++) {
-       if(hfield[i] == field[i])
-           a++;
-    }
-    if(a < 54) return 0;    //laut konvention: 0 = false alles andere = true
-    else return 1;
+        printf("   %c%c%c\n",field[45],field[46],field[47]);
+        printf("   %c%c%c\n",field[48],field[49],field[50]);
+        printf("   %c%c%c\n",field[51],field[52],field[53]);
 }
 
 
