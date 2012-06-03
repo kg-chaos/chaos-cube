@@ -54,6 +54,22 @@ void shell(){
 
 }
 
+void geloest(){
+printf(" _______  _______  _        _______  _______  _______ _________ _  _ \n");
+printf("(  ____ \\(  ____ \\( \\      (  ___  )(  ____ \\(  ____ \\\\__   __/( )( )\n");
+printf("| (    \\/| (    \\/| (      | (   ) || (    \\/| (    \\/   ) (   | || |\n");
+printf("| |      | (__    | |      | |   | || (__    | (_____    | |   | || |\n");
+printf("| | ____ |  __)   | |      | |   | ||  __)   (_____  )   | |   | || |\n");
+printf("| | \\_  )| (      | |      | |   | || (            ) |   | |   (_)(_)\n");
+printf("| (___) || (____/\\| (____/\\| (___) || (____/\\/\\____) |   | |    _  _ \n");
+printf("(_______)(_______/(_______/(_______)(_______/\\_______)   )_(   (_)(_)\n");
+
+
+ausgeben();
+exit(0);
+
+}
+
 void helpS(){
     printf("g for g / start\n");
     printf("s for stop\n");
@@ -117,12 +133,13 @@ void drehen() {
    dreh:
    time(&t);
    srand((unsigned int)t);              // Zufallsgenerator initialisieren
-    z = rand() % 17;
+    z = rand() % 11;
    funcArr[z]();
-
-    for(i = 0; i < 53; i++)
-       if(hfield[i] != field[i]);
-         goto dreh;
+   // printf("%i", z);
+//    for(i = 0; i < 53; i++)
+//       if(hfield[i] != field[i]);
+//         goto dreh;
+    geloest();
 }
 
 
