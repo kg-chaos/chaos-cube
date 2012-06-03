@@ -1,13 +1,12 @@
 #include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 
 typedef void (*funcsP) ();
 
-char field[54] = {'B','B','B','B','B','B','B','B','B','O','O','O','W','W',
-'W','R','R','R','Y','Y','Y','O','O','O','W','W','W','R','R','R','Y','Y','Y','O',
-'O','O','W','W','W','R','R','R','Y','Y','Y','G','G','G','G','G','G','G','G','G'};
+char field[54];
 const char hfield[54] = {'B','B','B','B','B','B','B','B','B','O','O','O','W','W',
 'W','R','R','R','Y','Y','Y','O','O','O','W','W','W','R','R','R','Y','Y','Y','O',
 'O','O','W','W','W','R','R','R','Y','Y','Y','G','G','G','G','G','G','G','G','G'};
@@ -20,10 +19,36 @@ void drehen();
 void begruessen();
 void shell();
 void helpS();
+void lesen();
+void schreiben();
 int main(){
     begruessen();
+    lesen();
     shell();
     return 0;
+}
+
+void lesen(){
+   int foo;
+   FILE *FDatei;
+   FDatei=fopen("cube.txt", "r"); // Datei öffnen, r = lesen, w = schreiben,.....
+   foo = fscanf(FDatei, "%54c", field);
+   fclose(FDatei); // Datei schliessen
+}
+
+void schreiben(){
+  int i = 0;
+  FILE *datei;
+
+  datei = fopen ("cube1.txt", "w");
+  if (datei == NULL)
+  {
+    printf("Fehler beim oeffnen der Datei.");
+  }
+  //for(;i<54;i++)
+  //strcpy(bar,field);
+  fwrite(&field,sizeof(field),1,datei);
+  fclose (datei);
 }
 
 void shell(){
@@ -131,14 +156,16 @@ void drehen() {
    int z;
    funcsP funcArr[] = {l, li, r, ri, u, ui, b, bi, d, di, f,fi};
    dreh:
+  for(i = 0; i <10000; i++){
    time(&t);
-   srand((unsigned int)t);              // Zufallsgenerator initialisieren
+   srand((unsigned int)i);              // Zufallsgenerator initialisieren
     z = rand() % 11;
    funcArr[z]();
-   // printf("%i", z);
+    printf("%i", z);}
 //    for(i = 0; i < 53; i++)
 //       if(hfield[i] != field[i]);
 //         goto dreh;
+    schreiben();
     geloest();
 }
 
