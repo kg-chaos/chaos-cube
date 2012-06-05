@@ -57,7 +57,7 @@ void lesen(){
    int foo;
    FILE *FDatei;
    FDatei=fopen("cube.txt", "r"); // Datei öffnen, r = lesen, w = schreiben,.....
-   if(FDatei==NULL) {printf("no document (404");exit(0);}
+   if(FDatei==NULL) {printf("no document (404)");exit(0);}
    foo = fscanf(FDatei, "%54c", field);
    fclose(FDatei); // Datei schliessen
 }
